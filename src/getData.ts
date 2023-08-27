@@ -1,4 +1,4 @@
-import presentData from "./checkData";
+import presentData from "./presentData";
 import handleError from "./handleError";
 
 async function getData(city: string, days: number) {
