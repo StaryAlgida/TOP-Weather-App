@@ -1,8 +1,10 @@
-import mainInfo from "./api_data_renders/today_info/mainInfo";
+import presentData from "./checkData";
+import handleError from "./handleError";
 
-async function getData(city: string) {
+async function getData(city: string, days: number) {
+  const key = "";
   callApi(
-    `https://api.weatherapi.com/v1/current.json?key=KEY=${city.toLowerCase()}`
+    `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=${days}&aqi=no&alerts=no`
   );
 }
 
@@ -10,9 +12,11 @@ async function callApi(link: string) {
   try {
     const apiResponse = await fetch(link, { mode: "cors" });
     const data = await apiResponse.json();
-    console.log(data.location.name);
-
-    mainInfo(data.location);
+    if (data.error) {
+      handleError(data.error.message);
+    } else {
+      presentData(data.location, data.current, data.forecast);
+    }
   } catch (err) {
     console.log(err);
   }
