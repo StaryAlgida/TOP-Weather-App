@@ -1,4 +1,4 @@
-function hourElement(dataHour: Hours): Element {
+function hourElement(dataHour: Hour): Element {
   const div = document.createElement("div");
 
   const time = hour(dataHour.time.split(" ")[1]);
@@ -25,7 +25,7 @@ function tempAndIcon(temp: number, icon: string): Element {
   const div = document.createElement("div");
   const hTemp = document.createElement("span");
   const hIcon = document.createElement("image") as HTMLImageElement;
-  hTemp.innerHTML = `${temp}`;
+  hTemp.innerHTML = `${temp}°C`;
   hIcon.src = `${icon}`;
   div.appendChild(hTemp);
   div.appendChild(hIcon);

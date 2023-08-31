@@ -12,20 +12,26 @@ function webInit() {
     </header>
     <section id="today-info">
         <div id="today-main-info">
-            <h1 id="city"></h1>
-            <span id="main-temp"></span>
-            <img id="main-weather-img">
-            <div id="main-more-info">
-              <span id="main-min-temp" class="main-info-text"></span>
-              <span id="main-max-temp" class="main-info-text"></span>
-              <span id="main-feels-temp" class="main-info-text""></span>
-              <span id="main-wind" class="main-info-text"></span>
-              <span id="main-uv" class="main-info-text"></span>
-              <span id="main-sunries" class="main-info-text"></span>
-              <span id="main-sunset" class="main-info-text"></span>
-              <span id="main-direction" class="main-info-text"></span>
+            <h1 id="city" class="bold color-white"></h1>
+            <div id="temp-img">
+              <span id="main-temp" class="bold"></span>
+              <img id="main-weather-img">
             </div>
-            <span id="main-date" class="main-info-text"></span>
+            <div id="main-more-info">
+              <div class="more-info-section">
+                <span id="main-min-temp" class="main-info-text"></span>
+                <span id="main-max-temp" class="main-info-text"></span>
+                <span id="main-feels-temp" class="main-info-text""></span>
+                <span id="main-wind" class="main-info-text color-white"></span>
+              </div>
+              <div class="more-info-section">
+                <span id="main-uv" class="main-info-text color-white"></span>
+                <span id="main-sunrise" class="main-info-text"></span>
+                <span id="main-sunset" class="main-info-text"></span>
+                <span id="main-direction" class="main-info-text color-white"></span>
+              </div>  
+            </div>
+            <span id="main-date" class="main-info-text color-white"></span>
         </div>
         <div id="today-hours-info"></div>
     </section>

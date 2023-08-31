@@ -12,7 +12,10 @@ function mainInfo(data: Location, current: Current, forecast: Forecast) {
 
   if (city && mainTemp && mainWeatherImg && mainDate) {
     city.innerText = `${data.name}`;
+
     mainTemp.innerText = `${current.temp_c}°C`;
+    setTempColor(mainTemp, current.temp_c);
+
     mainWeatherImg.src = `${current.condition.icon}`;
     mainWeatherImg.alt = `${current.condition.text}`;
     mainDate.innerText = `${current.last_updated}`;
@@ -27,7 +30,7 @@ function mainMoreInfo(forecast: Forecast, current: Current) {
   const mainFeelsTemp = document.getElementById("main-feels-temp");
   const mainWind = document.getElementById("main-wind");
   const mainUv = document.getElementById("main-uv");
-  const mainSunries = document.getElementById("main-sunries");
+  const mainSunries = document.getElementById("main-sunrise");
   const mainSunset = document.getElementById("main-sunset");
   const mainDirection = document.getElementById("main-direction");
 
@@ -41,14 +44,32 @@ function mainMoreInfo(forecast: Forecast, current: Current) {
     mainSunries &&
     mainSunset
   ) {
-    mainMinTemp.innerText = `${forecast.forecastday[0].day.mintemp_c}°C`;
-    mainMaxTemp.innerText = `${forecast.forecastday[0].day.maxtemp_c}°C`;
-    mainFeelsTemp.innerText = `${current.feelslike_c}°C`;
-    mainWind.innerText = `${forecast.forecastday[0].day.maxwind_kph}kph`;
-    mainUv.innerText = `${forecast.forecastday[0].day.uv}`;
-    mainSunries.innerText = `${forecast.forecastday[0].astro.sunrise}`;
-    mainSunset.innerText = `${forecast.forecastday[0].astro.sunset}`;
-    mainDirection.innerText = `${current.wind_dir}`;
+    mainMinTemp.innerText = `Min: ${forecast.forecastday[0].day.mintemp_c}°C`;
+    setTempColor(mainMinTemp, forecast.forecastday[0].day.mintemp_c);
+
+    mainMaxTemp.innerText = `Max: ${forecast.forecastday[0].day.maxtemp_c}°C`;
+    setTempColor(mainMaxTemp, forecast.forecastday[0].day.maxtemp_c);
+
+    mainFeelsTemp.innerText = `Feels: ${current.feelslike_c}°C`;
+    setTempColor(mainFeelsTemp, current.feelslike_c);
+
+    mainWind.innerText = `Wind: ${forecast.forecastday[0].day.maxwind_kph}kph`;
+    mainUv.innerText = `UV: ${forecast.forecastday[0].day.uv}`;
+    mainSunries.innerText = `Sunrise: ${forecast.forecastday[0].astro.sunrise}`;
+    mainSunset.innerText = `Sunset: ${forecast.forecastday[0].astro.sunset}`;
+    mainDirection.innerText = `Direction: ${current.wind_dir}`;
+  }
+}
+
+function setTempColor(el: Element, temp: number) {
+  if (temp >= 25.0) {
+    el.classList.add("hot");
+  } else if (temp < 25.0 && temp >= 18.0) {
+    el.classList.add("warm");
+  } else if (temp < 18.0 && temp >= 13.0) {
+    el.classList.add("near-cold");
+  } else {
+    el.classList.add("cold");
   }
 }
 

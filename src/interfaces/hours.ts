@@ -1,4 +1,4 @@
-interface Hours {
+interface Hour {
   time: string;
   temp_c: number;
   temp_f: number;
