@@ -1,3 +1,5 @@
+import hourListener from "../../listeners/hourListener";
+
 function hourElement(dataHour: Hour): Element {
   const div = document.createElement("div");
   div.classList.add("hour-el");
@@ -14,6 +16,7 @@ function hourElement(dataHour: Hour): Element {
   div.appendChild(time);
   div.appendChild(tempIcon);
   div.appendChild(chanceRainSnow);
+  hourListener(div, dataHour);
   return div;
 }
 

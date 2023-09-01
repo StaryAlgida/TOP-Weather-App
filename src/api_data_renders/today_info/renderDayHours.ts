@@ -1,3 +1,6 @@
+import checkTime from "../../extra/checkTime";
+import checkTimeLower from "../../extra/checkTimeLower";
+import getCurrentDate from "../../extra/getCurrentDate";
 import Forecast from "../../interfaces/forecast";
 import hourElement from "./hourElement";
 
@@ -17,39 +20,6 @@ function renderDayHours(hoursData: Forecast) {
         todayHoursInfo.appendChild(hourElement(el));
     });
   }
-}
-
-function checkTime(time: string, currentTime: Date): boolean {
-  let [inputHours, inputMinutes] = time.split(":").map(Number);
-  const parsedTime = new Date(
-    currentTime.getFullYear(),
-    currentTime.getMonth(),
-    currentTime.getDate(),
-    inputHours,
-    inputMinutes
-  );
-  return parsedTime >= currentTime;
-}
-
-function checkTimeLower(time: string, currentTime: Date): boolean {
-  let [inputHours, inputMinutes] = time.split(":").map(Number);
-  const parsedTime = new Date(
-    currentTime.getFullYear(),
-    currentTime.getMonth(),
-    currentTime.getDate(),
-    inputHours,
-    inputMinutes
-  );
-
-  return parsedTime <= currentTime;
-}
-
-function getCurrentDate(): Date {
-  const currentTime = new Date();
-  currentTime.setMinutes(0);
-  currentTime.setSeconds(0);
-  currentTime.setMilliseconds(0);
-  return currentTime;
 }
 
 export default renderDayHours;

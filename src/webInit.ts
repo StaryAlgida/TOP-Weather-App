@@ -35,7 +35,51 @@ function webInit() {
         </div>
         <div id="today-hours-info"></div>
     </section>
-    <section id="extra-info"></section>
+    <section id="extra-info">
+      <h2 id="extra-hour"></h2>
+      <div id="extra-contnet">
+        <div>
+          <span class="extra-title">Feels like</span>
+          <span id="extra-feel"></span>
+        </div>
+        <div>
+          <span class="extra-title">Wind</span>
+          <span id="extra-wind"></span>
+        </div>
+        <div>
+          <span class="extra-title">Wind degree</span>
+          <span id="extra-wind-degree"></span>
+        </div>
+        <div>
+          <span class="extra-title">Wind direction</span>
+          <span id="extra-wind-dir"></span>
+        </div>
+        <div>
+          <span class="extra-title">Pressure</span>
+          <span id="extra-press"></span>
+        </div>
+        <div>
+          <span class="extra-title">Precipitation amount</span>
+          <span id="extra-precip"></span>
+        </div>
+        <div>
+          <span class="extra-title">humidity</span>
+          <span id="extra-humid"></span>
+        </div>
+        <div>
+          <span class="extra-title">Cloud</span>
+          <span id="extra-cloud"></span>
+        </div>
+        <div>
+          <span class="extra-title">Visibility</span>
+          <span id="extra-vis"></span>
+        </div>
+        <div>
+          <span class="extra-title">UV</span>
+          <span id="extra-uv"></span>
+        </div>
+      </div>
+    </section>
     <section id="week-info"></section>`;
   }
 }
