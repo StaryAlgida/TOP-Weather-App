@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Inter";
 }
 
 .hot {
@@ -24,7 +25,8 @@
 #content {
   display: grid;
   grid-template-rows: 100px repeat(3, 1fr);
-  background-color: grey;
+  gap: 50px;
+  /* background-color: grey; */
   height: 100vh;
 }
 
@@ -41,11 +43,9 @@ header {
   gap: 100px;
   padding-left: 150px;
   padding-right: 100px;
-  padding-top: 50px;
 }
 
 .bold {
-  font-family: "Inter";
   font-weight: 900;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #00000060;
@@ -86,7 +86,6 @@ header {
 
 .main-info-text {
   font-size: 1.3rem;
-  font-family: "Inter";
   font-weight: 900;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #00000060;
@@ -131,12 +130,18 @@ header {
   padding-top: 20px;
   padding-bottom: 20px;
 
-  font-family: "Inter";
   font-size: 1.3rem;
   color: white;
   font-weight: 900;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #00000060;
+
+  transition-duration: 0.5s;
+}
+
+.hour-el:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 24px 0px #0084ff;
 }
 
 #main-sunrise {
@@ -171,4 +176,61 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#extra-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 150px;
+  padding-right: 100px;
+}
+
+#extra-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 20px;
+
+  background-color: #0084ff9f;
+  border-radius: 10px;
+}
+
+#extra-contnet {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+}
+
+#extra-contnet div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+
+  border-radius: 15px;
+
+  padding: 8px;
+
+  background-color: #aceeff;
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #00000060;
+}
+
+#extra-hour {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  background-color: #aceeff;
+  padding: 5px;
+  border-radius: 10px;
+
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #00000060;
 }

@@ -1,3 +1,5 @@
+import getData from "./getData";
+
 function webInit() {
   const content = document.querySelector("#content");
   if (content) {
@@ -36,6 +38,7 @@ function webInit() {
         <div id="today-hours-info"></div>
     </section>
     <section id="extra-info">
+    <div id="extra-container">
       <h2 id="extra-hour"></h2>
       <div id="extra-contnet">
         <div>
@@ -59,7 +62,7 @@ function webInit() {
           <span id="extra-press"></span>
         </div>
         <div>
-          <span class="extra-title">Precipitation amount</span>
+          <span class="extra-title">Precipitation</span>
           <span id="extra-precip"></span>
         </div>
         <div>
@@ -79,8 +82,24 @@ function webInit() {
           <span id="extra-uv"></span>
         </div>
       </div>
+    </div>
     </section>
     <section id="week-info"></section>`;
+  }
+  inputListner();
+}
+
+function inputListner() {
+  const input = document.getElementById("search-input") as HTMLInputElement;
+  const inputButton = document.getElementById("search");
+
+  if (input && inputButton) {
+    inputButton.addEventListener("click", () => {
+      const value = input.value;
+      console.log(value);
+      webInit();
+      getData(value, 10);
+    });
   }
 }
 

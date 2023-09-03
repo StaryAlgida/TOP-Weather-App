@@ -4,5 +4,5 @@ import "./style.css";
 
 window.onload = () => {
   webInit();
-  getData("warsaw", 2);
+  getData("london", 10);
 };
