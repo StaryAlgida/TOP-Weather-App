@@ -84,4 +84,4 @@ interface Forecast {
   forecastday: ForecastDay[];
 }
 
-export default Forecast;
+export { Forecast, ForecastDay };

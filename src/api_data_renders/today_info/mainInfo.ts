@@ -1,6 +1,6 @@
 import Location from "../../interfaces/location";
 import Current from "../../interfaces/current";
-import Forecast from "../../interfaces/forecast";
+import { Forecast } from "../../interfaces/forecast";
 
 function mainInfo(data: Location, current: Current, forecast: Forecast) {
   const city = document.getElementById("city");

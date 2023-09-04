@@ -84,7 +84,8 @@ function webInit() {
       </div>
     </div>
     </section>
-    <section id="week-info"></section>`;
+    <section id="week-info"></section>
+    <footer><span>Created by StaryAlgida</span></footer>`;
   }
   inputListner();
 }

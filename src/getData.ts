@@ -15,7 +15,6 @@ async function callApi(link: string) {
     if (data.error) {
       handleError(data.error.message);
     } else {
-      console.log(data);
       presentData(data.location, data.current, data.forecast);
     }
   } catch (err) {

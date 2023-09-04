@@ -1,7 +1,7 @@
 import checkTime from "../../extra/checkTime";
 import checkTimeLower from "../../extra/checkTimeLower";
 import getCurrentDate from "../../extra/getCurrentDate";
-import Forecast from "../../interfaces/forecast";
+import { Forecast } from "../../interfaces/forecast";
 import hourElement from "./hourElement";
 
 function renderDayHours(hoursData: Forecast) {
@@ -9,7 +9,6 @@ function renderDayHours(hoursData: Forecast) {
 
   if (todayHoursInfo) {
     const currentTime = getCurrentDate();
-    console.log(hoursData);
 
     hoursData.forecastday[0].hour.forEach((el) => {
       if (checkTime(el.time.split(" ")[1], currentTime))
