@@ -4,7 +4,7 @@ import handleError from "./handleError";
 async function getData(city: string, days: number) {
   const key = "cfde3a7a2bea4578b33151247232408&q";
   callApi(
-    `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=${days}&aqi=no&alerts=no&t=${Math.random()}`
+    `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=${days}&aqi=no&alerts=no&t=${Math.random()}`
   );
 }
 
