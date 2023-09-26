@@ -1,14 +1,17 @@
 import getData from "./getData";
+import logo from "./img/logo.png";
+import serach from "./img/icons8-search.gif";
+import staticSearch from "./img/icons8-search-50.png";
 
 function webInit() {
   const content = document.querySelector("#content");
   if (content) {
     content.innerHTML = `
     <header>
-        <img alt="logo">
-        <div>
+        <img alt="logo" src="${logo}" id="logo">
+        <div id="search-contaioner">
             <input type="text" id="search-input">
-            <button id="search">szukaj</button>
+            <button id="search"><img id="search-img" alt="search" src="${staticSearch}"></button>
         </div>
         <button id="change-temp-scale">F/C</button>
     </header>
@@ -88,6 +91,20 @@ function webInit() {
     <footer><span>Created by StaryAlgida</span></footer>`;
   }
   inputListner();
+  buttonList();
+}
+
+function buttonList() {
+  const button = document.getElementById("search");
+  const img = document.getElementById("search-img") as HTMLImageElement;
+  if (img && button) {
+    button.addEventListener("mouseover", () => {
+      img.src = serach;
+    });
+    button.addEventListener("mouseout", () => {
+      img.src = staticSearch;
+    });
+  }
 }
 
 function inputListner() {
@@ -97,9 +114,10 @@ function inputListner() {
   if (input && inputButton) {
     inputButton.addEventListener("click", () => {
       const value = input.value;
-      console.log(value);
-      webInit();
-      getData(value, 10);
+      if (value !== "") {
+        webInit();
+        getData(value, 10);
+      }
     });
   }
 }

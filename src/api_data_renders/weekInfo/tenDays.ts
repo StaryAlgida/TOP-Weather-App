@@ -3,6 +3,8 @@ import { Forecast } from "../../interfaces/forecast";
 import singleDay from "./singleDay";
 
 function tenDaysInfo(data: Forecast) {
+  console.log(data);
+
   const weekInfo = document.getElementById("week-info");
   const currentDate = date();
   if (weekInfo) {
@@ -15,7 +17,7 @@ function tenDaysInfo(data: Forecast) {
     </div>`;
     data.forecastday.forEach((el) => {
       if (el.date !== currentDate) {
-        console.log(el);
+        // console.log(el);
         weekInfo.appendChild(singleDay(el));
       }
     });
